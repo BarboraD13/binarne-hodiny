@@ -5,53 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <title>Binarne Hodiny</title>
 </head>
 
 <body>
-  <div class="x">
-        <img src="./images/grey.jpg" id="hour32">
-        <img src="./images/grey.jpg" id="minute32">
-        <img src="./images/grey.jpg" id="second32">
-        <p class="y">1</p>
-    </div>
-    
-    <div class="x">
-        <img src="./images/grey.jpg" id="hour16">
-        <img src="./images/grey.jpg" id="minute16">
-        <img src="./images/grey.jpg" id="second16">
-        <p class="y">2</p>
-    </div>
-    
-    <div class="x">
-        <img src="./images/grey.jpg" id="hour8">
-        <img src="./images/grey.jpg" id="minute8">
-        <img src="./images/grey.jpg" id="second8">
-        <p class="y">4</p>
-    </div>
-    
-    <div class="x">
-        <img src="./images/grey.jpg" id="hour4">
-        <img src="./images/grey.jpg" id="minute4">
-        <img src="./images/grey.jpg" id="second4">
-        <p class="y">8</p>
-    </div>
-    
-    <div class="x">
-        <img src="./images/grey.jpg" id="hour2">
-        <img src="./images/grey.jpg" id="minute2">
-        <img src="./images/grey.jpg" id="second2">
-        <p class="y">16</p>
-    </div>
+    <div class="center">
+        <table>
+            <tr>
+                <td></td>
+                <td><div id="12" class="circle"></div></td>
+                <td><div id="13" class="circle"></div></td>
+                <td><div id="14" class="circle r11"></div></td>
+                <td><div id="15" class="circle"></div></td>
+                <td><div id="16" class="circle"></div></td>
+                <td><h2 class="text">Hours</h2></td>
+            </tr>
 
-    <div class="x">
-        <img src="./images/grey.jpg" id="hour1">
-        <img src="./images/grey.jpg" id="minute1">
-        <img src="./images/grey.jpg" id="second1">
-        <p class="y">32</p>
-    </div>
+            <tr>
+                <td><div id="21" class="circle"></div></td>
+                <td><div id="22" class="circle"></div></td>
+                <td><div id="23" class="circle"></div></td>
+                <td><div id="24" class="circle"></div></td>
+                <td><div id="25" class="circle"></div></td>
+                <td><div id="26" class="circle"></div></td>
+                <td><h2 class="text">Minutes</h2></td>
+            </tr>
 
-    <script src="app.js"></script>
+            <tr>
+                <td><div id="31" class="circle"></div></td>
+                <td><div id="32" class="circle"></div></td>
+                <td><div id="33" class="circle"></div></td>
+                <td><div id="34" class="circle"></div></td>
+                <td><div id="35" class="circle"></div></td>
+                <td><div id="36" class="circle"></div></td>
+                <td><h2 class="text">Seconds</h2></td>
+            </tr>
+
+            <tr>
+                <td><h2 class="text">32</h2></td>
+                <td><h2 class="text">16</h2></td>
+                <td><h2 class="text">8</h2></td>
+                <td><h2 class="text">4</h2></td>
+                <td><h2 class="text">2</h2></td>
+                <td><h2 class="text">1</h2></td>
+            </tr>
+        </table>
+    </div>    
 </body>
+
+<script src="app.js"></script>
+
 </html>

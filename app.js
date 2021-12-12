@@ -1,262 +1,56 @@
-let second1 = document.getElementById("second1");
-let minute1 = document.getElementById("minute1");
-let hour1 = document.getElementById("hour1");
-let second2 = document.getElementById("second2");
-let minute2 = document.getElementById("minute2");
-let hour2 = document.getElementById("hour2");
-let second4 = document.getElementById("second4");
-let minute4 = document.getElementById("minute4");
-let hour4 = document.getElementById("hour4");
-let second8 = document.getElementById("second8");
-let minute8 = document.getElementById("minute8");
-let hour8 = document.getElementById("hour8");
-let second16  = document.getElementById("second16");
-let minute16 = document.getElementById("minute16");
-let hour16 = document.getElementById("hour16");
-let second32 = document.getElementById("second32");
-let minute32 = document.getElementById("minute32");
-let hour32 = document.getElementById("hour32");
+setInterval(timer, 100);
 
-setInterval(myTimer, 200);
-function myTimer()
-{
-    var date = new Date();
-    var a = date.getHours();
-    var b = date.getMinutes();
-    var c = date.getSeconds();
-    var d = 0;
-
-    if(c%2 == 1)
-    {
-        second32.src="./images/blue1.jpeg";
-        d = c - 1;
-        c = d/2
-    }
-
-    else
-    {
-        second32.src="./images/grey.jpg"
-        c = c/2
-    }
-
-    if(c%2 == 1)
-    {
-        second16.src="./images/blue1.jpeg";
-        d = c - 1;
-        c = d/2
-    }
+function timer(){
+    const date = new Date();
+    let seconds = dec2Bin(date.getSeconds())
+    let minutes = dec2Bin(date.getMinutes())
+    let hours = dec2Bin(date.getHours())
     
-    else
-    {
-        second16.src="./images/grey.jpg"
-        c = c/2
-    }
-
-    if(c%2 == 1)
-    {
-        second8.src="./images/blue1.jpeg";
-        d = c - 1;
-        c = d/2
-    }
+    for(let i = 1; i < 7; i++){
     
-    else
-    {
-        second8.src="./images/grey.jpg"
-        c = c/2
-    }
+        if(hours.charAt(i) == 1){
+            if(i != 1){
+            show("1" + i);
+            }
+        }
+        else{
+            if(i != 1){
+                hide("1" + i);
+            }
+        }
 
-    if(c%2 == 1)
-    {
-        second4.src="./images/blue1.jpeg";
-        d = c - 1;
-        c = d/2
-    }
-    
-    else
-    {
-        second4.src="./images/grey.jpg"
-        c = c/2
-    }
+        if(minutes.charAt(i) == 1){
+            show("2" + i);
+        }
+        else{
+            hide("2" + i);
+        }
 
-    if(c%2 == 1)
-    {
-        second2.src="./images/blue1.jpeg";
-        d = c - 1;
-        c = d/2
+        if(seconds.charAt(i) == 1){
+            show("3" + i);
+        }
+        else{
+            hide("3"+i);
+        }
+        
     }
-    
-    else
-    {
-        second2.src="./images/grey.jpg"
-        c = c/2
-    }
+}
 
-    if(c%2 == 1)
-    {
-        second1.src="./images/blue1.jpeg";
-        d = c - 1;
-        c = d/2
+function dec2Bin(dec) {
+    let temp = (dec >>> 0).toString(2);
+    while(temp.length <7){
+        temp = "0" + temp;
     }
-    
-    else
-    {
-        second1.src="./images/grey.jpg"
-        c = c/2
-    }
+    return temp;
+  }
 
-    if(b%2 == 1)
-    {
-        minute32.src="./images/blue1.jpeg";
-        d = b - 1;
-        b = d/2
-    }
-    
-    else
-    {
-        minute32.src="./images/grey.jpg"
-        b = b/2
-    }
+function show(position) {
+    document.getElementById(position).style.backgroundColor = "#15cde6";
+    document.getElementById(position).style.boxShadow = "0px 0px 15px 5px  #15cde6"
+}
 
-    if(b%2 == 1)
-    {
-        minute16.src="./images/blue1.jpeg";
-        d = b - 1;
-        b = d/2
-    }
+function hide(position) {
+    document.getElementById(position).style.backgroundColor = "#240a63";
+    document.getElementById(position).style.boxShadow = "0px 0px 0px 0px #000000";
     
-    else
-    {
-        minute16.src="./images/grey.jpg"
-        b = b/2
-    }
-
-    if(b%2 == 1)
-    {
-        minute8.src="./images/blue1.jpeg";
-        d = b - 1;
-        b= d/2
-    }
-    
-    else
-    {
-        minute8.src="./images/grey.jpg"
-        b = b/2
-    }
-
-    if(b%2 == 1)
-    {
-        minute4.src="./images/blue1.jpeg";
-        d = b - 1;
-        b = d/2
-    }
-    
-    else
-    {
-        minute4.src="./images/grey.jpg"
-        b = b/2
-    }
-
-    if(b%2 == 1)
-    {
-        minute2.src="./images/blue1.jpeg";
-        d = b - 1;
-        b = d/2
-    }
-    
-    else
-    {
-        minute2.src="./images/grey.jpg"
-        b = b/2
-    }
-
-    if(b%2 == 1)
-    {
-        minute1.src="./images/blue1.jpeg";
-        d = b - 1;
-        b = d/2
-    }
-    
-    else
-    {
-        minute1.src="./images/grey.jpg"
-        b = b/2
-    }
-
-    if(a%2 == 1)
-    {
-        hour32.src="./images/blue1.jpeg";
-        d = a - 1;
-        a = d/2
-    }
-    
-    else
-    {
-        hour32.src="./images/grey.jpg"
-        a = a/2
-    }
-
-    if(a%2 == 1)
-    {
-        hour16.src="./images/blue1.jpeg";
-        d = a - 1;
-        a = d/2
-    }
-    
-    else
-    {
-        hour16.src="./images/grey.jpg"
-        a = a/2
-    }
-
-    if(a%2 == 1)
-    {
-        hour8.src="./images/blue1.jpeg";
-        d = a - 1;
-        a = d/2
-    }
-    
-    else
-    {
-        hour8.src="./images/grey.jpg"
-        a = a/2
-    }
-
-    if(a%2 == 1)
-    {
-        hour4.src="./images/blue1.jpeg";
-        d = a - 1;
-        a = d/2
-    }
-    
-    else
-    {
-        hour4.src="./images/grey.jpg"
-        a = a/2
-    }
-
-    if(a%2 == 1)
-    {
-        hour2.src="./images/blue1.jpeg";
-        d = a - 1;
-        a = d/2
-    }
-    
-    else
-    {
-        hour2.src="./images/grey.jpg"
-        a = a/2
-    }
-
-    if(a%2 == 1)
-    {
-        hour1.src="./images/blue1.jpeg";
-        d = a - 1;
-        a = d/2
-    }
-    
-    else
-    {
-        hour1.src="./images/grey.jpg"
-        a = a/2
-    }
 }
